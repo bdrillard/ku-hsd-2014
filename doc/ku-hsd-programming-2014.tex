@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 
 \usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -231,109 +232,36 @@ Here we define how you must write your program to read from \texttt{stdin} and w
 \newpage
 
 A solution for the problem in C:
-\begin{lstlisting}[language=C]
-#include <stdio.h>
-
-int main() {
-    int ntests;
-    char name[100];
-
-    scanf("%d\n", &ntests);
-
-    int i;
-    for (i = 0; i < ntests; i++) {
-        scanf("%s\n", name);
-        printf("Hello %s!\n", name);
-    }
-
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting[language=C]{../examples/01/say-hello.c}
 
 Here, we note that C uses the \texttt{scanf} function to read from \texttt{stdin} and \texttt{printf} to write to \texttt{stdout}. It declares an integer variable \texttt{ntests}, and \texttt{scanf} reads in a value from the console and assigns that to \texttt{ntests} (we note that \texttt{scanf} really uses a \textit{reference} to \texttt{ntests}, that's what the \textit{and} sign means, but that's special C stuff). \texttt{scanf} is later used with a character array that will hold our names. Our character array's size is 100, which is just arbitrarily large so we can hold any name we might read. We then use the \texttt{printf} function to print out our strings to \texttt{stdout} as we loop through them. We have to always \texttt{return 0} or else our program will \textbf{error}! 
 
 A solution in C\texttt{++}:
-\begin{lstlisting}[language=C++]
-#include <iostream>
-#include <string>
+\lstinputlisting[language=C++]{../examples/01/say-hello.cpp}
 
-using namspace std;
-
-int main() {
-    int ntests;
-    string name;
-
-    cin >> ntests;
-    for (int i = 0; i < ntests; i++) {
-        cin >> name;
-        cout << "Hello " << name << "!" << endl;
-    }
-
-    return 0;
-}
-\end{lstlisting}
-
-C\texttt{++} uses \texttt{cin >>} to push \texttt{stdin} lines into a variable on the right, and uses \texttt{cout >>} to print out lines from the right to \texttt{stdout}. C\texttt{++} also has real strings, not just character arrays. Other than that, the logic of this solution is the same as the solution in C.
+C\texttt{++} uses \texttt{cin >>} to push \texttt{stdin} lines into a variable, and uses \texttt{cout >>} to print out lines to \texttt{stdout}. C\texttt{++} also has real strings, not just character arrays. Other than that, the logic of this solution is the same as the solution in C.
+\newpage
 
 A solution in Java:
-\begin{lstlisting}[language=Java]
-import java.io.*;
-
-class Main {
-    public static BufferedReader in;
-
-    public static void main(String[] args) throws IOException {
-        in = new BufferedReader(new InputStreamReader(System.in));
-
-        int nTests = Integer.parseInt(in.readLine());
-
-        for (int i = 0; i < nTests; i++) {
-            String name = in.readLine();
-            System.out.println("Hello " + name + "!");
-        }
-    }
-}
-\end{lstlisting}
+\lstinputlisting[language=Java]{../examples/01/say-hello.java}
 
 For Java, we first note our class \textbf{needs} to be named \textit{Main}. Java uses a \texttt{BufferedReader} object that it imports from \texttt{java.io.*}, which it uses to gather input from \texttt{System.in}. Using the command \texttt{System.out.println(...)} will let you write to \texttt{stdout}.
 
-A solution in Pythoni 2.7:
-\begin{lstlisting}[language=Python]
-import fileinput
-import sys
-
-num = sys.stdin.readline()
-
-for line in fileinput.input():
-    print "Hello " + line.strip() + "!"
-\end{lstlisting}
+A solution in Python 2.7:
+\lstinputlisting[language=Python]{../examples/01/say-hello.py2}
 
 For Python 2.7, we import \texttt{fileinput} and \texttt{sys} to get our input from \texttt{stdin}. Python has some looping mechanisms that will allow us to cleverly not need the integer representing the number of lines, the command on line 4 reads it in, but does nothing with it. The special Python \texttt{for} loop on line 6 will loop over all the lines from \texttt{stdin} and store each one temporarily in the variable \texttt{line}. It's worth noting that if we read in the lines this way, we need to strip off the hidden \texttt{newline} character that separates each line of input from the string we've read in. \texttt{strip()} does that for us. Then we just print it out to \texttt{stdout} with the aptly named \texttt{print} function.
-\newpage
 
 A solution in Python 3:
-\begin{lstlisting}[language=Python]
-import fileinput
-import sys
+\lstinputlisting[language=Python]{../examples/01/say-hello.py3}
 
-num = sys.stdin.readline()
-
-for line in fileinput.input():
-    print("Hello " + line.strip() + "!")
-\end{lstlisting}
 Python comes in two common versions. Python 2.7 and Python 3 are just different enough that it matters. All we notice here is that the Python 3 \texttt{print} command wraps its contents in parenthesis. There are some other differences too, so make sure you know which version of Python you're using. 
 
 \textbf{Note:} for both versions of Python, it's common to include \textit{interpreter directives} at the top of the file, that may look like \texttt{\#!/usr/bin/python}. You must \textbf{not} include a line like this in your submission. DOMJudge will be mad at you. If this doesn't look familiar to you anyway, just forget about it and go on with your day. 
+\newpage
 
 A solution in Ruby:
-\begin{lstlisting}[language=Ruby]
-\$stdin.each_line.each_with_index do |line, i|
-    if i == 0
-        next
-    end
-    puts "Hello #{line.strip}!"
-end
-\end{lstlisting}
+\lstinputlisting[language=Ruby]{../examples/01/say-hello.rb}
 
 Ruby uses a special variable \texttt{\$stdin} to represent console input. The method \texttt{each\_line} grabs all the lines from \texttt{stdin} at one time, and the method \texttt{each\_with\_index} allow us to keep track of our position in the loop. Since the first line is just a silly integer, we can use the index of 0 to skip it, then we can do what we'd like with subsequent lines. In our case, we use the function \texttt{puts} to write to \texttt{stdout}. You'd likely replicate this looping pattern if you decide to use Ruby.
 \newpage
@@ -366,6 +294,34 @@ Ruby uses a special variable \texttt{\$stdin} to represent console input. The me
     \end{verbatim} \\
     \hline
 \end{tabular}
+
+This example, though mathematically intuitive, is really quite a bit more complicated, reflecting the higher level of difficulty for the competition. Still, it makes a very instructive example of how to handle input for DOMJudge. 
+
+The general strategy for this program will be to loop over input until we encounter our \textit{sentinel value} of \texttt{0}, calculate the Greatest Common Divisor of the two integers in the fraction, divide both by that GCD, and then print out the fraction formatted correctly. The method we choose to compute the GCD is straightforward: check all the integers between 1 and the smaller number of the fraction. Whichever is the largest that divides both the numerator and the denominator without a remainder is the GCD. A more clever method of computing GCD's exists called the Euclidean Algorithm. You can check it out if you feel adventurous, but we opt for a simpler one here for clarity, and hey, you should use whatever makes sense to you fastest when competing. 
+\newpage
+
+A solution for the problem in C:
+\lstinputlisting[language=C]{../examples/02/fractions.c}
+\newpage
+
+A solution for the problem in C++:
+\lstinputlisting[language=C++]{../examples/02/fractions.cpp}
+\newpage
+
+A solution for the problem in Java:
+\lstinputlisting[language=Java]{../examples/02/fractions.java}
+\newpage
+
+A solution for the problem in Python 2.7:
+\lstinputlisting[language=Python]{../examples/02/fractions.py2}
+\newpage
+
+A solution for the problem in Python 3:
+\lstinputlisting[language=Python]{../examples/02/fractions.py3}
+\newpage
+
+A solution for the problem in Ruby:
+\lstinputlisting[language=Ruby]{../examples/02/fractions.rb}
 \newpage
 
 \subsection{Going Forward}
