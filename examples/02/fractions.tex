@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[parfill]{parskip}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+
+\title{Example Problem 2: Fractions}
+
+\begin{document}
+
+\lstset{
+    language=java,
+    basicstyle=\ttfamily,
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false
+}
+\maketitle
+\textbf{Description:} Write a program to simplify fractions.
+
+\textbf{Input:} Write your program to read pairs of integers from \texttt{stdin}. On each line of input, there will be a pair of space separated integers. The first will represent the \texttt{numerator} of the fraction, the second will represent the \texttt{denominator}. The end of input will be signaled by a \texttt{0}. For a pair of integers, you will never be given a numerator or denominator with a value of \texttt{0}. The only \texttt{0} given as input will be the one that signals the end of input. 
+
+
+\textbf{Output:} Write to \texttt{stdout} the simplified fraction, with the numerator separated from the denominator by a \textit{forward slash}, \texttt{/}. Each simplified fraction should be separated from the next by a newline. If the simplified fraction would be a single integer, write it without a denominator.  
+
+\textbf{Sample:}
+
+\begin{tabular}{|p{0.47\textwidth}|p{0.47\textwidth}|}
+    \hline
+    \textbf{input} & \textbf{outout} \\
+    \hline
+    \begin{verbatim}
+    18 12
+    28 49
+    99 11
+    13 5
+    0
+    \end{verbatim} &
+    \begin{verbatim}
+    3/2
+    4/7
+    9
+    13/5
+    \end{verbatim} \\
+    \hline
+\end{tabular}
+\end{document}

@@ -13,7 +13,7 @@
 
 \date{November 5, 2014}
 
-\author{Engineering SELF Fellows, Association for Computing Machinery}
+\author{Engineering SELF Fellows, KU Association for Computing Machinery}
 
 \begin{document}
 \lstset{
@@ -37,7 +37,7 @@ Welcome to the High School Design Programming Competition! This competition has 
     C \\
     C\texttt{++} \\
     Java \\ 
-    Python (v. 2.6 and 3.4) \\
+    Python (v. 2.7 and 3.4) \\
     Ruby \\
 \end{center}
 
@@ -53,13 +53,13 @@ If you have questions regarding the competition, please feel free to contact:
 
 \section{Rules}
 
-You will be given a docket describing a total of 10 programming challenges, arranged in ascending difficulty, and you will be allotted three and a half hours, in a single block of time, to write solution programs for these challenges. An automated system called DOMJudge provides a website interface, \url{http://bit.ly/YgPIPg} or its full url, \url{http://http://ec2-54-88-68-156.compute-1.amazonaws.com/}, where you can submit your solutions for judging, receive feedback, and check a running scoreboard and clock. Before the actual day of the competition, a test competition will be available here. The login username: team, password: pass, will allow you to browse the interface and even submit a solution to the problems of the test contest. 
+You will be given a docket describing a total of 10 programming challenges, arranged in ascending difficulty, and you will be allotted three and a half hours, in a single block of time, to write solution programs for these challenges. An automated system called DOMJudge provides a website interface, \url{http://bit.ly/YgPIPg} or its full url, \url{http://http://ec2-54-88-68-156.compute-1.amazonaws.com/}, where you can submit your solutions for judging, receive feedback, and check a running scoreboard and clock. Before the actual day of the competition, a test competition will be available here. The login username: team, password: pass, will allow you to browse the interface and even submit a solution to the problems of the test contest. Here, you can test submitting your programs for automated judging. 
 
-All problems will be described in a uniform fashion: An introduction to the problem will set up the scenario and describe what challenge you must write a program to solve. It will then describe how the input your program must read will be structured, and it will prescribe how the program's output must be formatted in order to be read correctly. An example of input and output will be provided for you to check your program against. \textbf{Note}: when your program is actually judged, different input data will be used, but the formatting will be the same. 
+All problems will be described in a uniform fashion: An introduction to the problem will set up the scenario and describe what challenge you must write a program to solve. It will then describe how the input your program must read will be structured, and it will prescribe how the program's output must be formatted in order to be read correctly. An example of input and output will be provided for you to check your program against. \textbf{Note}: when your program is actually judged, different input data will be used, but the formatting will be the same. Pay very special attention to the section describing how to properly write your programs to accept input from DOMJudge.
 
 Each correct problem is worth 1 point, so whichever team completes the most problems out of 10 will be designated the winner. In the case of ties, time (as marked in seconds, running from the beginning of the competition) will be used as a tiebreaker. So if more than 1 team completes all 10 problems, the first team to have done so is the winner. You may submit your solutions for judging as many times as you need to, but you should be aware that each time you submit a solution that is judged to be incorrect, you will receive a time penalty that will add to your total time, so it is best to work hard to ensure your program is correct before submitting for judging. However, even if your submission turns out to be wrong, you should feel free to rework it until you get it right or decide to move on to another problem. 
 
-Teams may consist of up to two students. You will not be allowed use of the Internet except for access to the DOMJudge web interface, but any books on your programming language may be used. 
+Teams may consist of up to two students. You will not be allowed use of the Internet except for access to the DOMJudge web interface, but any books on your programming language may be used during the competition. Day of the competition, your team will be allowed one computer in the Self Computing Commons of Eaton Hall. 42 computers will be available, meaning we can support up to 42 teams. Half of those machines run Windows 7, the other half run Fedora Linux. Software which students can use to write and test their programs will be uniform across both types, and submission to the DOMJudge system for judging is done through an Internet browser, so the students competitive experience will be uniform on both machines. You may make a request for your Operating System of choice however, but choices will be appropriated on a first-come registration basis.
 
 \newpage
 
@@ -114,11 +114,16 @@ All languages have special commands that either return specific pieces of inform
 
 Most languages will also let you define your own methods and functions elsewhere inside your program. This can help your code keep clean if you find yourself repeating some pattern of operations multiple times, and knowing how your language declares and uses them may be helpful.
 
+In particular, you will want to be familiar with methods or functions in your language that work with strings and arrays (or lists for Python and Ruby teams).
+
 \subsection{Going Forward}
-To best learn and practice the concepts listed above, we recommend you check out the websites \url{http://www.codecademy.com} or \url{http://www.codingbat.com}. They'll give you lots of simple challenges and tutorials that will introduce you to the languages supported by the competition. Each of them have lots of examples and even videos to help you learn the basic concepts in writing programs.
+To best learn and practice the concepts listed above, we recommend you check out the websites \url{http://www.codecademy.com} or \url{http://www.codingbat.com}. They'll give you lots of simple challenges and tutorials that will introduce you to the languages supported by the competition. Each of them have lots of examples and even videos to help you learn the basic concepts in writing programs. \textbf{Note:} although these resources will help you learn aspects of your chosen language, we strongly encourage you to install an IDE (Integrated Development Environment) and grow familiar with how to write programs using it. Feel free to log into the test competition and submit test solutions for the problems included there. 
+
+For each language supported by the competition, there are several popular IDEs, and the computers provided to you to write and submit your solutions will have many available. The most common is Eclipse, which has great support for Java and C/C++. For Python, there's Idle, and for Ruby, there's Aptana. All of these IDEs are freely available. Naturally, you should use whichever you feel most comfortable with. If you would like to ensure your IDE or text-editor will be available to you, feel free to email the Programming Competition director, whose email is on the second page of this packet. We'll see if your requested IDE is already installed, or if it can be. 
 \newpage
 
 \section{DOMJudge}
+
 \subsection{Summary}
 Here we include a short summary of the DOMJudge system interface, the web-portal by which you will submit your solutions for automated judging. The single constraint of this system is that your programs \textbf{must} be written to accept their input from \texttt{stdin} and write their output to \texttt{stdout} (also sometimes referred to as \textit{writing to the console}). We talk a little more about what this means in the examples portion of this section. What follows is an introduction to the interface.
 
@@ -195,13 +200,14 @@ The DOMJudge system is fully automated. Once input/output files have been prepar
 With the web interface you can submit the source code of your solution to the jury. Note that you must send your source code, not a compiled version of the program. Your solution is then sent over the network to a judging computer that will automatically compile or interpret your solution and pipe the proper input file to the program. The output of your program will then be compared against the validated output file. If your output matches the expected output, your program is correct. If not, you will receive some information about what went wrong before you go back to the drawing board. 
 
 \subsection{Examples of Proper Input/Output}
-Here we define how you must write your program to read from \texttt{stdin} and write to \texttt{stdout} for the languages supported by this competition. We do this through annotation of an example program.
+Here we define how you must write your program to read from \texttt{stdin} and write to \texttt{stdout} for the languages supported by this competition. We do this through annotation of two example programs. The purpose of this section is to expose you to the common input/output functions of your language that will allow your program to accep intput from DOMJudge and write output back to it.
+\newpage
 
 \textbf{Description:} Write a program to send a friendly greeting! 
 
-\textbf{Input:} The first line will be an integer representing the number of lines to read. Each subsequent line will be a single name.
+\textbf{Input:} Write a program to read a list of names headed by an integer from \texttt{stdin}. The first line will be an integer representing the number of lines to read. Each subsequent line will be a single name.
 
-\textbf{Output:} On a new line for each, print out the name you read as part of the string ``Hello \textless name\textgreater!''.
+\textbf{Output:} On a new line for each, print out to \texttt{stdout} the name you read as part of the string ``Hello \textless name\textgreater!''.
 
 \textbf{Sample:}
 
@@ -230,14 +236,14 @@ A solution for the problem in C:
 
 int main() {
     int ntests;
-    char name[100]
+    char name[100];
 
     scanf("%d\n", &ntests);
 
     int i;
     for (i = 0; i < ntests; i++) {
         scanf("%s\n", name);
-        printf("Hello %s\n", name);
+        printf("Hello %s!\n", name);
     }
 
     return 0;
@@ -279,7 +285,7 @@ class Main {
     public static void main(String[] args) throws IOException {
         in = new BufferedReader(new InputStreamReader(System.in));
 
-        int nTests = Integer.parseInt(in.readline());
+        int nTests = Integer.parseInt(in.readLine());
 
         for (int i = 0; i < nTests; i++) {
             String name = in.readLine();
@@ -317,11 +323,11 @@ for line in fileinput.input():
 \end{lstlisting}
 Python comes in two common versions. Python 2.7 and Python 3 are just different enough that it matters. All we notice here is that the Python 3 \texttt{print} command wraps its contents in parenthesis. There are some other differences too, so make sure you know which version of Python you're using. 
 
-\textbf{Note:} for both versions of Python, it's common to include \textit{interpreter directives} at the top of the file, that may look like \texttt{\#!/usr/bin/python}. You must \textbf{not} include a line like this in your submission. DOMJudge will be mad at you. If this doesn't look familiar to you anyway, just forget about it and go on with your life. 
+\textbf{Note:} for both versions of Python, it's common to include \textit{interpreter directives} at the top of the file, that may look like \texttt{\#!/usr/bin/python}. You must \textbf{not} include a line like this in your submission. DOMJudge will be mad at you. If this doesn't look familiar to you anyway, just forget about it and go on with your day. 
 
 A solution in Ruby:
 \begin{lstlisting}[language=Ruby]
-$stdin.each_line.each_with_index do |line, i|
+\$stdin.each_line.each_with_index do |line, i|
     if i == 0
         next
     end
@@ -330,8 +336,38 @@ end
 \end{lstlisting}
 
 Ruby uses a special variable \texttt{\$stdin} to represent console input. The method \texttt{each\_line} grabs all the lines from \texttt{stdin} at one time, and the method \texttt{each\_with\_index} allow us to keep track of our position in the loop. Since the first line is just a silly integer, we can use the index of 0 to skip it, then we can do what we'd like with subsequent lines. In our case, we use the function \texttt{puts} to write to \texttt{stdout}. You'd likely replicate this looping pattern if you decide to use Ruby.
+\newpage
+
+\textbf{Description:} Write a program to simplify fractions.
+
+\textbf{Input:} Write your program to read pairs of integers from \texttt{stdin}. On each line of input, there will be a pair of space separated integers. The first will represent the \texttt{numerator} of the fraction, the second will represent the \texttt{denominator}. The end of input will be signaled by a \texttt{0}. For a pair of integers, you will never be given a numerator or denominator with a value of \texttt{0}. The only \texttt{0} given as input will be the one that signals the end of input. 
+
+
+\textbf{Output:} Write to \texttt{stdout} the simplified fraction, with the numerator separated from the denominator by a \textit{forward slash}, \texttt{/}. Each simplified fraction should be separated from the next by a newline. If the simplified fraction would be a single integer, write it without a denominator.  
+
+\textbf{Sample:}
+
+\begin{tabular}{|p{0.47\textwidth}|p{0.47\textwidth}|}
+    \hline
+    \textbf{input} & \textbf{outout} \\
+    \hline
+    \begin{verbatim}
+    18 12
+    28 49
+    99 11
+    13 5
+    0
+    \end{verbatim} &
+    \begin{verbatim}
+    3/2
+    4/7
+    9
+    13/5
+    \end{verbatim} \\
+    \hline
+\end{tabular}
+\newpage
 
 \subsection{Going Forward}
 Now that you know how DOMJudge expects you to use Input/Output, feel free to log into the guest account of our test DOMJudge instance and review the practice problems there. You can also get a feel for the environment you'll use to judge submit your programs. Additional practice problems and even examples of solutions can be found at the github repository of the KU chapter of the Assocation for Computing Machinary, \url{https://github.com/KU-Competitive-Programming/Weekly-Problems}. Here we keep a backlog of interesting challenges and solutions our members have submittted in the past. Any problem headed \textit{Beginner} should be good for you to read the description of. 
-
 \end{document}

@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[parfill]{parskip}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+
+\title{Example Problem 01: Say Hello!}
+
+\begin{document}
+
+\lstset{
+    language=java,
+    basicstyle=\ttfamily,
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false
+}
+\maketitle
+\textbf{Description:} Write a program to send a friendly greeting! 
+
+\textbf{Input:} The first line will be an integer representing the number of lines to read. Each subsequent line will be a single name.
+
+\textbf{Output:} On a new line for each, print out the name you read as part of the string ``Hello \textless name\textgreater!''.
+
+\textbf{Sample:}
+
+\begin{tabular}{|p{0.47\textwidth}|p{0.47\textwidth}|}
+    \hline
+    \textbf{input} & \textbf{outout} \\
+    \hline
+    \begin{verbatim}
+    3
+    World
+    Alan
+    Ada
+    \end{verbatim} &
+    \begin{verbatim}
+    Hello world!
+    Hello Alan!
+    Hello Ada!
+    \end{verbatim} \\
+    \hline
+\end{tabular}
+
+\end{document}
